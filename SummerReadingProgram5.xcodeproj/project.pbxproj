@@ -7,21 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0F87E1DF2D701C590B8486 /* Pods_SummerReadingProgram5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC059921C244A292A1B078 /* Pods_SummerReadingProgram5.framework */; };
 		CC7DB94F20E62254000455BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB94E20E62254000455BB /* AppDelegate.swift */; };
-		CC7DB95120E62254000455BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB95020E62254000455BB /* ViewController.swift */; };
+		CC7DB95120E62254000455BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB95020E62254000455BB /* LoginViewController.swift */; };
 		CC7DB95420E62254000455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7DB95220E62254000455BB /* Main.storyboard */; };
 		CC7DB95620E62255000455BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7DB95520E62255000455BB /* Assets.xcassets */; };
 		CC7DB95920E62255000455BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7DB95720E62255000455BB /* LaunchScreen.storyboard */; };
+		CC7DB96120E62783000455BB /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96020E62783000455BB /* Reader.swift */; };
+		CC7DB96320E627C0000455BB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96220E627C0000455BB /* Log.swift */; };
+		CC7DB96520E627E0000455BB /* ReaderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96420E627E0000455BB /* ReaderDataService.swift */; };
+		CC7DB96720E627F1000455BB /* LogDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96620E627F1000455BB /* LogDataService.swift */; };
+		CC7DB96920E62A31000455BB /* CreateReaderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */; };
+		CC7DB96B20E69D80000455BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96A20E69D80000455BB /* SignUpViewController.swift */; };
+		CC7DB96D20E6E936000455BB /* LoginDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96C20E6E936000455BB /* LoginDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60BFDDE3320A0C8442F5D677 /* Pods-SummerReadingProgram5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerReadingProgram5.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummerReadingProgram5/Pods-SummerReadingProgram5.debug.xcconfig"; sourceTree = "<group>"; };
+		A657C94FCE016C577386A2F2 /* Pods-SummerReadingProgram5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummerReadingProgram5.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummerReadingProgram5/Pods-SummerReadingProgram5.release.xcconfig"; sourceTree = "<group>"; };
+		A8DC059921C244A292A1B078 /* Pods_SummerReadingProgram5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummerReadingProgram5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7DB94B20E62254000455BB /* SummerReadingProgram5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummerReadingProgram5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7DB94E20E62254000455BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC7DB95020E62254000455BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC7DB95020E62254000455BB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC7DB95320E62254000455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC7DB95520E62255000455BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC7DB95820E62255000455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC7DB95A20E62255000455BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC7DB96020E62783000455BB /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
+		CC7DB96220E627C0000455BB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		CC7DB96420E627E0000455BB /* ReaderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderDataService.swift; sourceTree = "<group>"; };
+		CC7DB96620E627F1000455BB /* LogDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDataService.swift; sourceTree = "<group>"; };
+		CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReaderDataService.swift; sourceTree = "<group>"; };
+		CC7DB96A20E69D80000455BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CC7DB96C20E6E936000455BB /* LoginDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0F87E1DF2D701C590B8486 /* Pods_SummerReadingProgram5.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2793E9CE8041577A5178090B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60BFDDE3320A0C8442F5D677 /* Pods-SummerReadingProgram5.debug.xcconfig */,
+				A657C94FCE016C577386A2F2 /* Pods-SummerReadingProgram5.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		69B7BF6A1FCC6BD63FCB8613 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8DC059921C244A292A1B078 /* Pods_SummerReadingProgram5.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CC7DB94220E62254000455BB = {
 			isa = PBXGroup;
 			children = (
 				CC7DB94D20E62254000455BB /* SummerReadingProgram5 */,
 				CC7DB94C20E62254000455BB /* Products */,
+				2793E9CE8041577A5178090B /* Pods */,
+				69B7BF6A1FCC6BD63FCB8613 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,8 +93,15 @@
 			isa = PBXGroup;
 			children = (
 				CC7DB94E20E62254000455BB /* AppDelegate.swift */,
-				CC7DB95020E62254000455BB /* ViewController.swift */,
+				CC7DB95020E62254000455BB /* LoginViewController.swift */,
+				CC7DB96A20E69D80000455BB /* SignUpViewController.swift */,
 				CC7DB95220E62254000455BB /* Main.storyboard */,
+				CC7DB96020E62783000455BB /* Reader.swift */,
+				CC7DB96220E627C0000455BB /* Log.swift */,
+				CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */,
+				CC7DB96C20E6E936000455BB /* LoginDataService.swift */,
+				CC7DB96420E627E0000455BB /* ReaderDataService.swift */,
+				CC7DB96620E627F1000455BB /* LogDataService.swift */,
 				CC7DB95520E62255000455BB /* Assets.xcassets */,
 				CC7DB95720E62255000455BB /* LaunchScreen.storyboard */,
 				CC7DB95A20E62255000455BB /* Info.plist */,
@@ -71,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC7DB95D20E62255000455BB /* Build configuration list for PBXNativeTarget "SummerReadingProgram5" */;
 			buildPhases = (
+				99A7D5633C7AB1DA1ABAFE76 /* [CP] Check Pods Manifest.lock */,
 				CC7DB94720E62254000455BB /* Sources */,
 				CC7DB94820E62254000455BB /* Frameworks */,
 				CC7DB94920E62254000455BB /* Resources */,
+				5EAF37E6C7ADFFE830207169 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +177,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EAF37E6C7ADFFE830207169 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SummerReadingProgram5/Pods-SummerReadingProgram5-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SummerReadingProgram5/Pods-SummerReadingProgram5-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99A7D5633C7AB1DA1ABAFE76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummerReadingProgram5-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC7DB94720E62254000455BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7DB95120E62254000455BB /* ViewController.swift in Sources */,
+				CC7DB96120E62783000455BB /* Reader.swift in Sources */,
+				CC7DB96D20E6E936000455BB /* LoginDataService.swift in Sources */,
+				CC7DB95120E62254000455BB /* LoginViewController.swift in Sources */,
+				CC7DB96B20E69D80000455BB /* SignUpViewController.swift in Sources */,
+				CC7DB96720E627F1000455BB /* LogDataService.swift in Sources */,
+				CC7DB96320E627C0000455BB /* Log.swift in Sources */,
 				CC7DB94F20E62254000455BB /* AppDelegate.swift in Sources */,
+				CC7DB96520E627E0000455BB /* ReaderDataService.swift in Sources */,
+				CC7DB96920E62A31000455BB /* CreateReaderDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +373,13 @@
 		};
 		CC7DB95E20E62255000455BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60BFDDE3320A0C8442F5D677 /* Pods-SummerReadingProgram5.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C8BNJKYV;
 				INFOPLIST_FILE = SummerReadingProgram5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,17 +387,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = us.matthey.itsforbabies.SummerReadingProgram5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CC7DB95F20E62255000455BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A657C94FCE016C577386A2F2 /* Pods-SummerReadingProgram5.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C8BNJKYV;
 				INFOPLIST_FILE = SummerReadingProgram5/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = us.matthey.itsforbabies.SummerReadingProgram5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
