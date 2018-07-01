@@ -9,32 +9,43 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var confirmPasswordText: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     
+    var token = ""
+
     @IBAction func signUp(_ sender: UIButton) {
-        if let email = emailText.text,
+        if let username = usernameText.text,
             let password = passwordText.text,
             let confirmPassword = confirmPasswordText.text {
-            if !isValidEmailAddress(email) || password != confirmPassword {
-                clear()
+            if password != confirmPassword {
+                errorLabel.text = "password and confirm password does not match"
+                clearText()
             } else {
-                let createReaderDataService = CreateReaderDataService()
-                    // Variable used within its own initial valueCannot convert value of type '() -> ()' to expected argument type 'String'
-                    print("createReaderDataService is true or false: \(createReaderDataService)")
+                CreateReaderDataService().createUser(username: username, password1: password, password2: confirmPassword) { response in
+                    print("\(response)")
+                    if response != "Login failed" {
+                        // This works but it won't allow me to add a bar button item
+                        // let logTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+                        // self.navigationController?.pushViewController(logTableViewController, animated: true)
+                        self.token = response
+                        self.performSegue(withIdentifier: "SignupToLogIdentifier", sender: nil)
+                        // self.dismiss(animated: false, completion: nil)
+                    } else {
+                        self.clearText()
+                        self.errorLabel.text = "Signup failed"
+                    }
+                }
+                
             }
         }
     }
     
-    func isValidEmailAddress(_ emailAddress: String) -> Bool {
-        // TODO: implment regex logic http://swiftdeveloperblog.com/email-address-validation-in-swift/
-        return true
-    }
-    
-    func clear() {
-        emailText.text = ""
+    func clearText() {
+        usernameText.text = ""
         passwordText.text = ""
         confirmPasswordText.text = ""
     }
