@@ -92,14 +92,14 @@
                         <outlet property="passwordText" destination="ri0-MC-oZn" id="ZDd-2F-EKC"/>
                         <outlet property="signUpButton" destination="tsi-Ix-Ab0" id="Z4k-pg-Zbx"/>
                         <outlet property="usernameText" destination="wqE-5f-AMR" id="3Hg-IV-PML"/>
-                        <segue destination="bny-Mr-MQy" kind="presentation" identifier="LogIdentifier" id="R56-tc-SdB"/>
+                        <segue destination="ybb-aQ-fwn" kind="presentation" identifier="LogIdentifier" id="ucd-Km-cMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078.125" y="32.74647887323944"/>
         </scene>
-        <!--Log Table View Controller-->
+        <!--Reading Log-->
         <scene sceneID="Oqj-Tx-SAe">
             <objects>
                 <tableViewController storyboardIdentifier="LogTableViewController" id="bny-Mr-MQy" customClass="LogTableViewController" customModule="SummerReadingProgram5" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,19 +107,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="OpD-R1-8zb">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Reading Log" id="s7E-2I-5My">
-                                    <barButtonItem key="leftBarButtonItem" title="Log Out" id="wZA-VH-gB6"/>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="EhC-lX-HMa"/>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogItem" id="i56-2o-N2J">
-                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i56-2o-N2J" id="CiF-b6-e0w">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -132,11 +122,33 @@
                             <outlet property="delegate" destination="bny-Mr-MQy" id="BEH-Aj-Sik"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DSv-od-fdb"/>
+                    <navigationItem key="navigationItem" title="Reading Log" id="DSv-od-fdb">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="azG-Ar-4gL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qCE-Xp-fY7">
+                            <connections>
+                                <segue destination="PUW-Vu-erF" kind="show" id="Dex-t8-Zbw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miy-BN-KHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838.75" y="32.74647887323944"/>
+            <point key="canvasLocation" x="2818.125" y="32.74647887323944"/>
+        </scene>
+        <!--Datails View Controller-->
+        <scene sceneID="npp-rv-eWy">
+            <objects>
+                <viewController id="PUW-Vu-erF" customClass="DatailsViewController" customModule="SummerReadingProgram5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qb0-D3-t9T">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sRe-AX-3X7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5H-8b-vcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3564" y="33"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="F2j-Xe-JLv">
@@ -237,6 +249,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3c-Qr-0ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="80.625" y="32.74647887323944"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DId-98-b1l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ybb-aQ-fwn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IAh-rG-jG2">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bny-Mr-MQy" kind="relationship" relationship="rootViewController" id="OOW-Zn-ROE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fqi-oW-8fs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820.625" y="32.74647887323944"/>
         </scene>
     </scenes>
 </document>
