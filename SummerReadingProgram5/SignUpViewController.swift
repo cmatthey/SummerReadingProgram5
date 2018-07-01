@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
             } else {
                 let createReaderDataService = CreateReaderDataService()
                     // Variable used within its own initial valueCannot convert value of type '() -> ()' to expected argument type 'String'
-//                    print("Email: \(reader.email)")
+                    print("createReaderDataService is true or false: \(createReaderDataService)")
             }
         }
     }

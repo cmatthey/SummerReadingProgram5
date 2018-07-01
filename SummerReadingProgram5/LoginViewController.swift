@@ -9,10 +9,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    // https://ux.stackexchange.com/questions/34243/what-is-the-best-register-sign-up-text-for-submit-buttons-on-forms
-
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
@@ -20,9 +19,21 @@ class LoginViewController: UIViewController {
         if let username = usernameText.text,
             let password = passwordText.text {
             let loginReaderDataService = LoginReaderDataService()
-            loginReaderDataService.login(username: username, password: password)
+            loginReaderDataService.login(username: username, password: password) { response in
+                print("\(response)")
+                if response != "Login failed" {
+                    let logTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
+                    self.navigationController?.pushViewController(logTableViewController, animated: true)
+                    self.dismiss(animated: false, completion: nil)
+                } else {
+                    self.clearText()
+                    self.errorLabel.text = "Login failed"
+                }
+            }
         }
     }
+    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +53,11 @@ class LoginViewController: UIViewController {
     func enableLoginButton(_ enable: Bool) {
         loginButton.isEnabled = enable
         loginButton.alpha = enable ? 1.0 : 0.5
+    }
+    
+    func clearText() {
+        usernameText.text = ""
+        passwordText.text = ""
     }
 }
 
