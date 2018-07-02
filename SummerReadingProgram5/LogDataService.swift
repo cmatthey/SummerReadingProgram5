@@ -7,4 +7,36 @@
 //
 
 import Foundation
+import Alamofire
 
+class LogDataService {
+//    var readerId: Int
+    var allLogUrl: String = ""
+    
+    func getLogs(readerId: Int, completion: @escaping ([Log]?) -> Void) {
+        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+        
+        Alamofire.request(allLogUrl, method: .get)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Response String: \(String(data: response.data!, encoding: .utf8))")
+                    if let data = response.data {
+                        do {
+                            let logs = try JSONDecoder().decode([Log].self, from: data)
+                            completion(logs)
+                        } catch {
+                            print("Unexpected json response: \(error).")
+                        }
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                        print("Error response: \(utf8Text)")
+                    }
+                    completion(nil)
+                }
+        }
+    }
+}

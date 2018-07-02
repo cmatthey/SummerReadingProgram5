@@ -15,8 +15,24 @@ class LogTableViewController: UITableViewController {
     var logs = [Log]()
     let userDefaults = UserDefaults.standard
 
+    func updateLogs() {
+        readerId = userDefaults.integer(forKey: "readerId")
+        LogDataService().getLogs(readerId: readerId) { logs in
+            if let logs = logs {
+                self.logs = logs
+                print("length of logs: \(self.logs.count)")
+                for log in logs {
+                    print("title \(log.title)")
+                }
+            }
+        }
+//        print("length of logs: \(logs.count)")
+//        return [Log]()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateLogs()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,15 +46,7 @@ class LogTableViewController: UITableViewController {
         readerId = userDefaults.integer(forKey: "readerId")
         let goal = userDefaults.integer(forKey: "goal")
         print("readerId \(readerId) goal \(goal)")
-        
-        LogDataService().getLogs(readerId: readerId) { logs in
-            if let logs = logs {
-                self.logs = logs
-                for log in logs {
-                    print("title \(log.title)")
-                }
-            }
-        }
+        updateLogs()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,14 +81,30 @@ class LogTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return logs.count
+        var internalLog = [Log]()
+        LogDataService().getLogs(readerId: readerId) { logs in
+            if let logs = logs {
+                print("len of logs \(logs.count)")
+                internalLog = logs
+            }
+        }
+        print("len of logs outter \(internalLog.count)") // Always return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LogItem", for: indexPath)
-        let log = logs[indexPath.row]
-        cell.textLabel?.text = log.title
-        cell.detailTextLabel?.text = log.author
+        // TODO: When is method is called during the View state
+        readerId = userDefaults.integer(forKey: "readerId")
+        LogDataService().getLogs(readerId: readerId) { logs in
+            if let logs = logs {
+                print("len of logs \(logs.count) indexPath \(indexPath.row)")
+                
+                let log = logs[indexPath.row]
+                cell.textLabel!.text = log.title
+                cell.detailTextLabel!.text = log.author
+            }
+        }
         
         return cell
     }
