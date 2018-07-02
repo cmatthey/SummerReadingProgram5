@@ -11,16 +11,52 @@ import UIKit
 class LogTableViewController: UITableViewController {
     
     var token = ""
+    var readerId = -1
+    var logs = [Log]()
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("token: \(token)")
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        readerId = userDefaults.integer(forKey: "readerId")
+        let goal = userDefaults.integer(forKey: "goal")
+        print("readerId \(readerId) goal \(goal)")
+        
+        LogDataService().getLogs(readerId: readerId) { logs in
+            if let logs = logs {
+                self.logs = logs
+                for log in logs {
+                    print("title \(log.title)")
+                }
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        do {
+            let fm = FileManager.default
+            let url = try fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let path = url.appendingPathComponent("reader")
+            print("path: \(path.absoluteString).")
+            if let reader = NSKeyedUnarchiver.unarchiveObject(withFile: path.absoluteString) as? Reader {
+                print("reader in logTableViewController: \(reader).")
+            } else {
+                print("NSKeyedUnarchiver failure viewDidAppear")
+            }
+        } catch {
+            print("DocumentDirectory error: \(error).")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,25 +66,24 @@ class LogTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return logs.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LogItem", for: indexPath)
+        let log = logs[indexPath.row]
+        cell.textLabel?.text = log.title
+        cell.detailTextLabel?.text = log.author
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

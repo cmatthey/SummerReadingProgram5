@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Log: Decodable {
+class Log: Codable {
     var logId: Int64
     var readerId: Int64
     var author: String

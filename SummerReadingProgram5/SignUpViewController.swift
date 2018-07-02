@@ -9,13 +9,16 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    // TODO: clear errorLabel
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var confirmPasswordText: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     
+    let userDefaults = UserDefaults.standard
     var token = ""
+    var readerId = -1
 
     @IBAction func signUp(_ sender: UIButton) {
         if let username = usernameText.text,
@@ -25,18 +28,14 @@ class SignUpViewController: UIViewController {
                 errorLabel.text = "password and confirm password does not match"
                 clearText()
             } else {
-                CreateReaderDataService().createUser(username: username, password1: password, password2: confirmPassword) { response in
-                    print("\(response)")
-                    if response != "Login failed" {
-                        // This works but it won't allow me to add a bar button item
-                        // let logTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogTableViewController") as! LogTableViewController
-                        // self.navigationController?.pushViewController(logTableViewController, animated: true)
-                        self.token = response
+                CreateReaderDataService().registration(username: username, password1: password, password2: confirmPassword) { token, readerId in
+                    if token != "Login failed" {
+                        self.token = token
+                        self.readerId = readerId
                         self.performSegue(withIdentifier: "SignupToLogIdentifier", sender: nil)
-                        // self.dismiss(animated: false, completion: nil)
                     } else {
-                        self.clearText()
                         self.errorLabel.text = "Signup failed"
+                        self.clearText()
                     }
                 }
                 
@@ -52,18 +51,17 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        readerId = userDefaults.integer(forKey: "readerId")
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "SignupToLogIdentifier" {
+            let uINavigationController = segue.destination as! UINavigationController
+            let logTableViewController = uINavigationController.topViewController as! LogTableViewController
+            logTableViewController.token = token
+            logTableViewController.readerId = readerId
+        }
     }
-    */
 
 }

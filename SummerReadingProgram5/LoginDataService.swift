@@ -20,7 +20,7 @@ class LoginReaderDataService {
             "password": password
         ]
         
-        Alamofire.request(createReaderUrl, method: .post, parameters: payload, encoding: JSONEncoding.default)
+        Alamofire.request(createReaderUrl, method: .post, parameters: payload)
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -28,7 +28,7 @@ class LoginReaderDataService {
                     print("Response String: \(String(describing: response.result.value))")
                     if let value = response.result.value {
                         if let token = JSON(value)["key"].string {
-                            self.userDefaults.set(true, forKey: "isLoggedIn")
+                            self.userDefaults.set(true, forKey: "loggedIn")
                             completion(token)
                         }
                     }

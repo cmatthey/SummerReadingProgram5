@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Token: Decodable {
+class Token: Codable {
     var token: String
     
     init(token: String) {

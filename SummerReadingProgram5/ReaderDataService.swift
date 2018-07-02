@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 
 class ReaderDataService {
-    let readerId: Int64
+    let readerId: Int
     var readerUrl: String
     
-    init(readerId: Int64) {
+    init(readerId: Int) {
         self.readerId = readerId
         self.readerUrl = "http://localhost:8000/api/v1/reader/\(readerId)/"
     }
