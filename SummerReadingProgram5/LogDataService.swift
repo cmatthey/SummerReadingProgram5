@@ -21,7 +21,7 @@ class LogDataService {
             .responseJSON { response in
                 switch response.result {
                 case .success:
-                    print("Response String: \(String(data: response.data!, encoding: .utf8))")
+                    print("Response String: \(String(describing: String(data: response.data!, encoding: .utf8)))")
                     if let data = response.data {
                         do {
                             let logs = try JSONDecoder().decode([Log].self, from: data)
@@ -36,6 +36,37 @@ class LogDataService {
                         print("Error response: \(utf8Text)")
                     }
                     completion(nil)
+                }
+        }
+    }
+    
+    func createLog(readerId: Int, title: String, author: String) {
+        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+        let payload: [String: Any] = [
+            "readerId": readerId,
+            "title": title,
+            "author": title
+        ]
+        
+        Alamofire.request(allLogUrl, method: .post, parameters: payload, encoding: JSONEncoding.default)
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    print("Response String: \(String(describing: String(data: response.data!, encoding: .utf8)))")
+                    if let data = response.data {
+//                        do {
+//                            let logs = try JSONDecoder().decode([Log].self, from: data)
+//                            completion(logs)
+//                        } catch {
+//                            print("Unexpected json response: \(error).")
+//                        }
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                        print("Error response: \(utf8Text)")
+                    }
                 }
         }
     }

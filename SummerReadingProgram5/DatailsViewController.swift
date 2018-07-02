@@ -10,6 +10,18 @@ import UIKit
 
 class DatailsViewController: UIViewController {
 
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var authorText: UITextField!
+    @IBOutlet weak var noteText: UITextView!
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBAction func save(_ sender: Any) {
+        let userDefaults = UserDefaults.standard
+        let readerId = userDefaults.integer(forKey: "readerId")
+        LogDataService().createLog(readerId: readerId, title: titleText!.text!, author: authorText!.text!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

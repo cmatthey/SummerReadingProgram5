@@ -164,7 +164,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYO-u9-XV9">
-                                <rect key="frame" x="30" y="94" width="34" height="30"/>
+                                <rect key="frame" x="30" y="50" width="34" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FHO-60-ch1"/>
                                 </constraints>
@@ -173,7 +173,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D36-hj-uBQ">
-                                <rect key="frame" x="90" y="94" width="200" height="30"/>
+                                <rect key="frame" x="90" y="50" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nsL-sS-iqd"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="vzH-yO-TG0"/>
@@ -183,7 +183,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xn-Qk-seY">
-                                <rect key="frame" x="30" y="154" width="51.5" height="30"/>
+                                <rect key="frame" x="30" y="110" width="51.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="RNg-cw-t2v"/>
                                 </constraints>
@@ -192,7 +192,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p1L-p2-1KU">
-                                <rect key="frame" x="90" y="154" width="200" height="30"/>
+                                <rect key="frame" x="90" y="110" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="X7S-Jb-D4l"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="YVe-bh-b3r"/>
@@ -202,7 +202,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdR-qj-2Em">
-                                <rect key="frame" x="30" y="214" width="37" height="30"/>
+                                <rect key="frame" x="30" y="170" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="32K-Ph-LQH"/>
                                 </constraints>
@@ -211,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What I like most about this book is ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GAn-qB-f1b">
-                                <rect key="frame" x="90" y="214" width="200" height="200"/>
+                                <rect key="frame" x="90" y="170" width="200" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="IE3-3m-1ea"/>
@@ -220,6 +220,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTC-gF-7V8">
+                                <rect key="frame" x="256" y="508" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="PUW-Vu-erF" eventType="touchUpInside" id="PWY-aL-Js5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -229,15 +236,23 @@
                             <constraint firstItem="3xn-Qk-seY" firstAttribute="top" secondItem="UYO-u9-XV9" secondAttribute="bottom" constant="30" id="H5C-C5-wCN"/>
                             <constraint firstAttribute="trailing" secondItem="GAn-qB-f1b" secondAttribute="trailing" constant="30" id="ITQ-zo-0mv"/>
                             <constraint firstItem="GAn-qB-f1b" firstAttribute="top" secondItem="p1L-p2-1KU" secondAttribute="bottom" constant="30" id="RBU-NL-qJG"/>
+                            <constraint firstItem="sRe-AX-3X7" firstAttribute="bottom" secondItem="sTC-gF-7V8" secondAttribute="bottom" constant="30" id="Ss3-cw-vqc"/>
                             <constraint firstItem="BdR-qj-2Em" firstAttribute="leading" secondItem="sRe-AX-3X7" secondAttribute="leading" constant="30" id="YPI-ZN-UKD"/>
                             <constraint firstItem="BdR-qj-2Em" firstAttribute="top" secondItem="3xn-Qk-seY" secondAttribute="bottom" constant="30" id="YvR-QQ-4hg"/>
                             <constraint firstItem="UYO-u9-XV9" firstAttribute="top" secondItem="sRe-AX-3X7" secondAttribute="top" constant="30" id="frf-F4-Lkv"/>
                             <constraint firstItem="sRe-AX-3X7" firstAttribute="trailing" secondItem="p1L-p2-1KU" secondAttribute="trailing" constant="30" id="lx6-GW-8e4"/>
                             <constraint firstItem="D36-hj-uBQ" firstAttribute="top" secondItem="sRe-AX-3X7" secondAttribute="top" constant="30" id="nJK-RK-3Yw"/>
+                            <constraint firstItem="sRe-AX-3X7" firstAttribute="trailing" secondItem="sTC-gF-7V8" secondAttribute="trailing" constant="30" id="oIK-ww-1ff"/>
                             <constraint firstItem="3xn-Qk-seY" firstAttribute="leading" secondItem="sRe-AX-3X7" secondAttribute="leading" constant="30" id="w0H-1x-xhE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sRe-AX-3X7"/>
                     </view>
+                    <connections>
+                        <outlet property="authorText" destination="p1L-p2-1KU" id="3U5-Ot-rk0"/>
+                        <outlet property="noteText" destination="GAn-qB-f1b" id="co4-af-kYV"/>
+                        <outlet property="saveButton" destination="sTC-gF-7V8" id="X3p-7j-zXJ"/>
+                        <outlet property="titleText" destination="D36-hj-uBQ" id="T2G-Y0-G8r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5H-8b-vcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
