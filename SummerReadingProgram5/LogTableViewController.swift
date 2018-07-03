@@ -99,10 +99,13 @@ class LogTableViewController: UITableViewController {
         LogDataService().getLogs(readerId: readerId) { logs in
             if let logs = logs {
                 print("len of logs \(logs.count) indexPath \(indexPath.row)")
-                
-                let log = logs[indexPath.row]
-                cell.textLabel!.text = log.title
-                cell.detailTextLabel!.text = log.author
+                if logs.count > 0 {
+                    let log = logs[indexPath.row]
+                    cell.textLabel!.text = log.title
+                    cell.detailTextLabel!.text = log.author
+                } else {
+                    // Empty reading logs for new users
+                }
             }
         }
         

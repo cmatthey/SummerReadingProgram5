@@ -11,8 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 class CreateReaderDataService {
-    var registrationUrl = "http://localhost:8000/api/v1/rest-auth/registration/"
-    var createReaderUrl = "http://localhost:8000/api/v1/reader/"
+//    var registrationUrl = "http://localhost:8000/api/v1/rest-auth/registration/"
+//    var createReaderUrl = "http://localhost:8000/api/v1/reader/"
+    var registrationUrl = "http://35.238.0.108:8000/api/v1/rest-auth/registration/"
+    var createReaderUrl = "http://35.238.0.108:8000/api/v1/reader/"
     let userDefaults = UserDefaults.standard
     
     func registration(username: String, password1: String, password2: String, completion: @escaping (String, Int) -> Void) {

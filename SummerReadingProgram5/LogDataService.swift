@@ -14,7 +14,8 @@ class LogDataService {
     var allLogUrl: String = ""
     
     func getLogs(readerId: Int, completion: @escaping ([Log]?) -> Void) {
-        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+//        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+        allLogUrl = "http://35.238.0.108:8000/api/v1/reader/\(readerId)/log/"
         
         Alamofire.request(allLogUrl, method: .get)
             .validate()
@@ -41,7 +42,8 @@ class LogDataService {
     }
     
     func createLog(readerId: Int, title: String, author: String) {
-        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+//        allLogUrl = "http://localhost:8000/api/v1/reader/\(readerId)/log/"
+        allLogUrl = "http://35.238.0.108:8000/api/v1/reader/\(readerId)/log/"
         let payload: [String: Any] = [
             "readerId": readerId,
             "title": title,
