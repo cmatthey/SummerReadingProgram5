@@ -280,7 +280,7 @@
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tux_1280" translatesAutoresizingMaskIntoConstraints="NO" id="NPh-aI-bnU">
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tux_1280" translatesAutoresizingMaskIntoConstraints="NO" id="NPh-aI-bnU">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
