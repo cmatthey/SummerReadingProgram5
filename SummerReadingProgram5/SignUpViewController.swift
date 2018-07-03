@@ -32,7 +32,7 @@ class SignUpViewController: UIViewController {
                     if token != "Login failed" {
                         self.token = token
                         self.readerId = readerId
-                        self.performSegue(withIdentifier: "SignupToLogIdentifier", sender: nil)
+                        self.performSegue(withIdentifier: "SignupToLogIdentifier", sender: self)
                     } else {
                         self.errorLabel.text = "Signup failed"
                         self.clearText()

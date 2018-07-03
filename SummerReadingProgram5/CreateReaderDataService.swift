@@ -33,6 +33,7 @@ class CreateReaderDataService {
                     if let value = response.result.value {
                         if let token = JSON(value)["key"].string {
                             self.userDefaults.set(true, forKey: "loggedIn")
+                            self.userDefaults.set(token, forKey: "token")
                             self.createUser(name: username, appleId: "", completion: { reader in
                                 print("reader: \(reader)")
                                 

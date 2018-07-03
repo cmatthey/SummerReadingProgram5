@@ -14,25 +14,9 @@ class LogTableViewController: UITableViewController {
     var readerId = -1
     var logs = [Log]()
     let userDefaults = UserDefaults.standard
-
-    func updateLogs() {
-        readerId = userDefaults.integer(forKey: "readerId")
-        LogDataService().getLogs(readerId: readerId) { logs in
-            if let logs = logs {
-                self.logs = logs
-                print("length of logs: \(self.logs.count)")
-                for log in logs {
-                    print("title \(log.title)")
-                }
-            }
-        }
-//        print("length of logs: \(logs.count)")
-//        return [Log]()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateLogs()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -46,25 +30,10 @@ class LogTableViewController: UITableViewController {
         readerId = userDefaults.integer(forKey: "readerId")
         let goal = userDefaults.integer(forKey: "goal")
         print("readerId \(readerId) goal \(goal)")
-        updateLogs()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        do {
-            let fm = FileManager.default
-            let url = try fm.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let path = url.appendingPathComponent("reader")
-            print("path: \(path.absoluteString).")
-            if let reader = NSKeyedUnarchiver.unarchiveObject(withFile: path.absoluteString) as? Reader {
-                print("reader in logTableViewController: \(reader).")
-            } else {
-                print("NSKeyedUnarchiver failure viewDidAppear")
-            }
-        } catch {
-            print("DocumentDirectory error: \(error).")
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,15 +50,12 @@ class LogTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var internalLog = [Log]()
         LogDataService().getLogs(readerId: readerId) { logs in
-            if let logs = logs {
-                print("len of logs \(logs.count)")
-                internalLog = logs
-            }
+            print("len of logs \(logs!.count)")
+            self.logs = logs!
         }
-        print("len of logs outter \(internalLog.count)") // Always return 0
-        return 1
+        print("len of self.logs \(self.logs.count)")
+        return 10
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,9 +66,14 @@ class LogTableViewController: UITableViewController {
             if let logs = logs {
                 print("len of logs \(logs.count) indexPath \(indexPath.row)")
                 if logs.count > 0 {
-                    let log = logs[indexPath.row]
-                    cell.textLabel!.text = log.title
-                    cell.detailTextLabel!.text = log.author
+                    if indexPath.row < logs.count {
+                        let log = logs[indexPath.row]
+                        cell.textLabel!.text = log.title
+                        cell.detailTextLabel!.text = log.author
+                    } else {
+                        cell.textLabel!.text = ""
+                        cell.detailTextLabel!.text = ""
+                    }
                 } else {
                     // Empty reading logs for new users
                 }

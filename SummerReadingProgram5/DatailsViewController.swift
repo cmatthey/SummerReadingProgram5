@@ -20,6 +20,11 @@ class DatailsViewController: UIViewController {
         let userDefaults = UserDefaults.standard
         let readerId = userDefaults.integer(forKey: "readerId")
         LogDataService().createLog(readerId: readerId, title: titleText!.text!, author: authorText!.text!)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

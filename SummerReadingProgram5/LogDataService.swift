@@ -47,7 +47,7 @@ class LogDataService {
         let payload: [String: Any] = [
             "readerId": readerId,
             "title": title,
-            "author": title
+            "author": author
         ]
         
         Alamofire.request(allLogUrl, method: .post, parameters: payload, encoding: JSONEncoding.default)
@@ -56,14 +56,6 @@ class LogDataService {
                 switch response.result {
                 case .success:
                     print("Response String: \(String(describing: String(data: response.data!, encoding: .utf8)))")
-                    if let data = response.data {
-//                        do {
-//                            let logs = try JSONDecoder().decode([Log].self, from: data)
-//                            completion(logs)
-//                        } catch {
-//                            print("Unexpected json response: \(error).")
-//                        }
-                    }
                 case .failure(let error):
                     print("Error: \(error)")
                     if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {

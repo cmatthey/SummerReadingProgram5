@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
             loginReaderDataService.login(username: username, password: password) { response in
                 if response != "Login failed" {
                     self.token = response
-                    self.performSegue(withIdentifier: "LogIdentifier", sender: nil)
+                    self.performSegue(withIdentifier: "LogIdentifier", sender: self)
                 } else {
                     self.errorLabel.text = "Login failed"
                     self.clearText()
