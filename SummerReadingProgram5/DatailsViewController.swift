@@ -8,6 +8,9 @@
 
 import UIKit
 
+///
+/// Controller to add an entry of reading log
+///
 class DatailsViewController: UIViewController {
 
     @IBOutlet weak var titleText: UITextField!

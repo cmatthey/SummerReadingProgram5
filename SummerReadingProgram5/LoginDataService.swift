@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
+///
+/// Networking service to handle login
+///
 class LoginReaderDataService {
 //    var createReaderUrl = "http://localhost:8000/api/v1/rest-auth/login/"
     var createReaderUrl = "http://35.238.0.108:8000/api/v1/rest-auth/login/"

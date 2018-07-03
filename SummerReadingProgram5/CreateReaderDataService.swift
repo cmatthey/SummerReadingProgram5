@@ -10,6 +10,9 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+///
+/// Networking service to handle registration and create a user in the reader table
+///
 class CreateReaderDataService {
 //    var registrationUrl = "http://localhost:8000/api/v1/rest-auth/registration/"
 //    var createReaderUrl = "http://localhost:8000/api/v1/reader/"

@@ -8,6 +8,9 @@
 
 import UIKit
 
+///
+/// Controller to handle sign-up
+///
 class SignUpViewController: UIViewController {
     // TODO: clear errorLabel
     @IBOutlet weak var usernameText: UITextField!

@@ -8,6 +8,9 @@
 
 import UIKit
 
+///
+/// Controller to handle login
+///
 class LoginViewController: UIViewController {
     @IBOutlet weak var usernameText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -56,7 +59,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: check if the goal has been set
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

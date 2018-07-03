@@ -8,6 +8,9 @@
 
 import Foundation
 
+///
+/// Class that represents a reader
+///
 class Reader: NSObject, NSCoding, Codable {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(readerId, forKey: "readerId")

@@ -8,6 +8,9 @@
 
 import Foundation
 
+///
+/// Class that represents an entry of reading log
+//
 class Log: Codable {
     var logId: Int64
     var readerId: Int64

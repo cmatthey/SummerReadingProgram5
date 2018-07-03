@@ -16,13 +16,11 @@
 		CC7DB95920E62255000455BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7DB95720E62255000455BB /* LaunchScreen.storyboard */; };
 		CC7DB96120E62783000455BB /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96020E62783000455BB /* Reader.swift */; };
 		CC7DB96320E627C0000455BB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96220E627C0000455BB /* Log.swift */; };
-		CC7DB96520E627E0000455BB /* ReaderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96420E627E0000455BB /* ReaderDataService.swift */; };
 		CC7DB96720E627F1000455BB /* LogDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96620E627F1000455BB /* LogDataService.swift */; };
 		CC7DB96920E62A31000455BB /* CreateReaderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */; };
 		CC7DB96B20E69D80000455BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96A20E69D80000455BB /* SignUpViewController.swift */; };
 		CC7DB96D20E6E936000455BB /* LoginDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96C20E6E936000455BB /* LoginDataService.swift */; };
 		CC82389920E84254004B13DA /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82389820E84254004B13DA /* LogTableViewController.swift */; };
-		CC82389B20E846D4004B13DA /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82389A20E846D4004B13DA /* Token.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +37,11 @@
 		CC7DB95A20E62255000455BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7DB96020E62783000455BB /* Reader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		CC7DB96220E627C0000455BB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		CC7DB96420E627E0000455BB /* ReaderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderDataService.swift; sourceTree = "<group>"; };
 		CC7DB96620E627F1000455BB /* LogDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDataService.swift; sourceTree = "<group>"; };
 		CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReaderDataService.swift; sourceTree = "<group>"; };
 		CC7DB96A20E69D80000455BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CC7DB96C20E6E936000455BB /* LoginDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataService.swift; sourceTree = "<group>"; };
 		CC82389820E84254004B13DA /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
-		CC82389A20E846D4004B13DA /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +102,8 @@
 				CC7DB95220E62254000455BB /* Main.storyboard */,
 				CC7DB96020E62783000455BB /* Reader.swift */,
 				CC7DB96220E627C0000455BB /* Log.swift */,
-				CC82389A20E846D4004B13DA /* Token.swift */,
 				CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */,
 				CC7DB96C20E6E936000455BB /* LoginDataService.swift */,
-				CC7DB96420E627E0000455BB /* ReaderDataService.swift */,
 				CC7DB96620E627F1000455BB /* LogDataService.swift */,
 				CC7DB95520E62255000455BB /* Assets.xcassets */,
 				CC7DB95720E62255000455BB /* LaunchScreen.storyboard */,
@@ -240,9 +234,7 @@
 				CC7DB96720E627F1000455BB /* LogDataService.swift in Sources */,
 				CC7DB96320E627C0000455BB /* Log.swift in Sources */,
 				CC46773720E9512200A32A4A /* DatailsViewController.swift in Sources */,
-				CC82389B20E846D4004B13DA /* Token.swift in Sources */,
 				CC7DB94F20E62254000455BB /* AppDelegate.swift in Sources */,
-				CC7DB96520E627E0000455BB /* ReaderDataService.swift in Sources */,
 				CC7DB96920E62A31000455BB /* CreateReaderDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

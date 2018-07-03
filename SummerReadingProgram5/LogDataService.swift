@@ -9,6 +9,9 @@
 import Foundation
 import Alamofire
 
+///
+/// Networking service to handle get reading log summary and create a new reading log entry
+///
 class LogDataService {
 //    var readerId: Int
     var allLogUrl: String = ""
