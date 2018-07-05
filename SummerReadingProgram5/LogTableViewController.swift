@@ -33,6 +33,15 @@ class LogTableViewController: UITableViewController {
         readerId = userDefaults.integer(forKey: "readerId")
         let goal = userDefaults.integer(forKey: "goal")
         print("readerId \(readerId) goal \(goal)")
+        
+        LogDataService().getLogs(readerId: readerId) { logs in
+            print("len of logs \(logs!.count)")
+            
+            DispatchQueue.main.async {
+                self.logs = logs!
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,35 +61,42 @@ class LogTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        LogDataService().getLogs(readerId: readerId) { logs in
-            print("len of logs \(logs!.count)")
-            self.logs = logs!
-        }
         print("len of self.logs \(self.logs.count)")
-        return 10
+        return self.logs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LogItem", for: indexPath)
-        // TODO: When is method is called during the View state
-        readerId = userDefaults.integer(forKey: "readerId")
-        LogDataService().getLogs(readerId: readerId) { logs in
-            if let logs = logs {
-                print("len of logs \(logs.count) indexPath \(indexPath.row)")
-                if logs.count > 0 {
-                    if indexPath.row < logs.count {
-                        let log = logs[indexPath.row]
-                        cell.textLabel!.text = log.title
-                        cell.detailTextLabel!.text = log.author
-                    } else {
-                        cell.textLabel!.text = ""
-                        cell.detailTextLabel!.text = ""
-                    }
-                } else {
-                    // Empty reading logs for new users
-                }
+//        readerId = userDefaults.integer(forKey: "readerId")
+//        LogDataService().getLogs(readerId: readerId) { logs in
+//            if let logs = logs {
+//                print("len of logs \(logs.count) indexPath \(indexPath.row)")
+//                if logs.count > 0 {
+//                    if indexPath.row < logs.count {
+//                        let log = logs[indexPath.row]
+//                        cell.textLabel!.text = log.title
+//                        cell.detailTextLabel!.text = log.author
+//                    } else {
+//                        cell.textLabel!.text = ""
+//                        cell.detailTextLabel!.text = ""
+//                    }
+//                } else {
+//                    // Empty reading logs for new users
+//                }
+//            }
+//        }
+        
+        if logs.count > 0 {
+            if indexPath.row < logs.count {
+                let log = logs[indexPath.row]
+                cell.textLabel!.text = log.title
+                cell.detailTextLabel!.text = log.author
+            } else {
+                cell.textLabel!.text = ""
+                cell.detailTextLabel!.text = ""
             }
+        } else {
+            // Empty reading logs for new users
         }
         
         return cell
