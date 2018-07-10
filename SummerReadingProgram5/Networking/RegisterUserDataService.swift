@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import SwiftKeychainWrapper
 
 class RegisterUserDataService {
     var registrationUrl = "http://35.238.0.108:8000/api/v1/rest-auth/registration/"
@@ -30,7 +31,8 @@ class RegisterUserDataService {
                     if let value = response.result.value {
                         if let token = JSON(value)["key"].string {
                             self.userDefaults.set(true, forKey: "loggedIn")
-                            self.userDefaults.set(token, forKey: "token")
+                            KeychainWrapper.standard.set(token, forKey: "token")
+//                            self.userDefaults.set(token, forKey: "token")
                             CreateReaderDataService().createUser(name: username, appleId: "", completion: { reader in
                                 print("reader: \(reader)")
                                 

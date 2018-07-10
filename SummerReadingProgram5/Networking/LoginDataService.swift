@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import SwiftKeychainWrapper
 
 
 ///
@@ -34,6 +35,7 @@ class LoginReaderDataService {
                     if let value = response.result.value {
                         if let token = JSON(value)["key"].string {
                             self.userDefaults.set(true, forKey: "loggedIn")
+                            KeychainWrapper.standard.set(token, forKey: "token")
                             completion(token)
                         }
                     }

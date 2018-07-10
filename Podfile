@@ -8,5 +8,6 @@ target 'SummerReadingProgram5' do
   # Pods for SummerReadingProgram5
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SwiftKeychainWrapper'
 
 end
