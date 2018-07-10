@@ -31,7 +31,7 @@ class SignUpViewController: UIViewController {
                 errorLabel.text = "password and confirm password does not match"
                 clearText()
             } else {
-                CreateReaderDataService().registration(username: username, password1: password, password2: confirmPassword) { token, readerId in
+                RegisterUserDataService().registration(username: username, password1: password, password2: confirmPassword) { token, readerId in
                     if token != "Login failed" {
                         self.token = token
                         self.readerId = readerId

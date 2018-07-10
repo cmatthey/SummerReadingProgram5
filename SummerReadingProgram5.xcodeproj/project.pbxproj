@@ -21,6 +21,7 @@
 		CC7DB96B20E69D80000455BB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96A20E69D80000455BB /* SignUpViewController.swift */; };
 		CC7DB96D20E6E936000455BB /* LoginDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7DB96C20E6E936000455BB /* LoginDataService.swift */; };
 		CC82389920E84254004B13DA /* LogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC82389820E84254004B13DA /* LogTableViewController.swift */; };
+		CCEBBA1220F44E4000D21336 /* RegisterUserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEBBA1120F44E4000D21336 /* RegisterUserDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CC7DB96A20E69D80000455BB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CC7DB96C20E6E936000455BB /* LoginDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataService.swift; sourceTree = "<group>"; };
 		CC82389820E84254004B13DA /* LogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewController.swift; sourceTree = "<group>"; };
+		CCEBBA1120F44E4000D21336 /* RegisterUserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +129,6 @@
 			children = (
 				CC7DB94E20E62254000455BB /* AppDelegate.swift */,
 				CC7DB95220E62254000455BB /* Main.storyboard */,
-				CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */,
 				CC7DB95520E62255000455BB /* Assets.xcassets */,
 				CC7DB95720E62255000455BB /* LaunchScreen.storyboard */,
 				CC7DB95A20E62255000455BB /* Info.plist */,
@@ -138,6 +139,8 @@
 		CCEBBA1020F44B9D00D21336 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */,
+				CCEBBA1120F44E4000D21336 /* RegisterUserDataService.swift */,
 				CC7DB96C20E6E936000455BB /* LoginDataService.swift */,
 				CC7DB96620E627F1000455BB /* LogDataService.swift */,
 			);
@@ -262,6 +265,7 @@
 				CC7DB96D20E6E936000455BB /* LoginDataService.swift in Sources */,
 				CC82389920E84254004B13DA /* LogTableViewController.swift in Sources */,
 				CC7DB95120E62254000455BB /* LoginViewController.swift in Sources */,
+				CCEBBA1220F44E4000D21336 /* RegisterUserDataService.swift in Sources */,
 				CC7DB96B20E69D80000455BB /* SignUpViewController.swift in Sources */,
 				CC7DB96720E627F1000455BB /* LogDataService.swift in Sources */,
 				CC7DB96320E627C0000455BB /* Log.swift in Sources */,
