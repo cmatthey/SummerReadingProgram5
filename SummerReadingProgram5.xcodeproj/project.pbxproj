@@ -94,22 +94,54 @@
 		CC7DB94D20E62254000455BB /* SummerReadingProgram5 */ = {
 			isa = PBXGroup;
 			children = (
-				CC7DB94E20E62254000455BB /* AppDelegate.swift */,
+				CCEBBA0E20F44A7C00D21336 /* Controllers */,
+				CCEBBA0D20F44A6A00D21336 /* Models */,
+				CCEBBA0F20F44B2700D21336 /* SupportFiles */,
+				CCEBBA1020F44B9D00D21336 /* Networking */,
+			);
+			path = SummerReadingProgram5;
+			sourceTree = "<group>";
+		};
+		CCEBBA0D20F44A6A00D21336 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC7DB96020E62783000455BB /* Reader.swift */,
+				CC7DB96220E627C0000455BB /* Log.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCEBBA0E20F44A7C00D21336 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				CC7DB95020E62254000455BB /* LoginViewController.swift */,
 				CC7DB96A20E69D80000455BB /* SignUpViewController.swift */,
 				CC82389820E84254004B13DA /* LogTableViewController.swift */,
 				CC46773620E9512200A32A4A /* DatailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CCEBBA0F20F44B2700D21336 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CC7DB94E20E62254000455BB /* AppDelegate.swift */,
 				CC7DB95220E62254000455BB /* Main.storyboard */,
-				CC7DB96020E62783000455BB /* Reader.swift */,
-				CC7DB96220E627C0000455BB /* Log.swift */,
 				CC7DB96820E62A31000455BB /* CreateReaderDataService.swift */,
-				CC7DB96C20E6E936000455BB /* LoginDataService.swift */,
-				CC7DB96620E627F1000455BB /* LogDataService.swift */,
 				CC7DB95520E62255000455BB /* Assets.xcassets */,
 				CC7DB95720E62255000455BB /* LaunchScreen.storyboard */,
 				CC7DB95A20E62255000455BB /* Info.plist */,
 			);
-			path = SummerReadingProgram5;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		CCEBBA1020F44B9D00D21336 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CC7DB96C20E6E936000455BB /* LoginDataService.swift */,
+				CC7DB96620E627F1000455BB /* LogDataService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C8BNJKYV;
-				INFOPLIST_FILE = SummerReadingProgram5/Info.plist;
+				INFOPLIST_FILE = SummerReadingProgram5/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62C8BNJKYV;
-				INFOPLIST_FILE = SummerReadingProgram5/Info.plist;
+				INFOPLIST_FILE = SummerReadingProgram5/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
