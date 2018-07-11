@@ -216,9 +216,9 @@
                         <viewLayoutGuide key="safeArea" id="sRe-AX-3X7"/>
                     </view>
                     <navigationItem key="navigationItem" id="PaG-8S-LGc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4kO-wg-fYI">
+                        <barButtonItem key="leftBarButtonItem" title="Scan barcode" id="4kO-wg-fYI">
                             <connections>
-                                <action selector="cancel:" destination="PUW-Vu-erF" id="jU2-mI-Tmq"/>
+                                <action selector="scan:" destination="PUW-Vu-erF" id="jU2-mI-Tmq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bDS-PS-cjm">
