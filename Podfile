@@ -9,5 +9,6 @@ target 'SummerReadingProgram5' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SwiftKeychainWrapper'
+  pod 'BarcodeScanner'
 
 end

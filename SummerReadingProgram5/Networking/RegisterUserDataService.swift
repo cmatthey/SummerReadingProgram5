@@ -12,7 +12,7 @@ import SwiftyJSON
 import SwiftKeychainWrapper
 
 class RegisterUserDataService {
-    var registrationUrl = "http://35.238.0.108:8000/api/v1/rest-auth/registration/"
+    var registrationUrl = "http://35.238.0.108/booklogs/api/v1/rest-auth/registration/"
     let userDefaults = UserDefaults.standard
 
     func registration(username: String, password1: String, password2: String, completion: @escaping (String, Int) -> Void) {

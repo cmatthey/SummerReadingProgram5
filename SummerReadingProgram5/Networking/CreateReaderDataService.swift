@@ -16,7 +16,7 @@ import SwiftyJSON
 class CreateReaderDataService {
 //    var registrationUrl = "http://localhost:8000/api/v1/rest-auth/registration/"
 //    var createReaderUrl = "http://localhost:8000/api/v1/reader/"
-    var createReaderUrl = "http://35.238.0.108:8000/api/v1/reader/"
+    var createReaderUrl = "http://35.238.0.108/booklogs/api/v1/reader/"
     let userDefaults = UserDefaults.standard
     
     func createUser(name: String, appleId: String, completion: @escaping (Reader) -> Void) {

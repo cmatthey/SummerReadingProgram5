@@ -17,7 +17,7 @@ import SwiftKeychainWrapper
 ///
 class LoginReaderDataService {
 //    var createReaderUrl = "http://localhost:8000/api/v1/rest-auth/login/"
-    var createReaderUrl = "http://35.238.0.108:8000/api/v1/rest-auth/login/"
+    var loginUrl = "http://35.238.0.108/booklogs/api/v1/rest-auth/login/"
     let userDefaults = UserDefaults.standard
     
     func login(username: String, password: String, completion: @escaping (String) -> Void ) {
@@ -26,7 +26,7 @@ class LoginReaderDataService {
             "password": password
         ]
         
-        Alamofire.request(createReaderUrl, method: .post, parameters: payload)
+        Alamofire.request(loginUrl, method: .post, parameters: payload)
             .validate()
             .responseJSON { response in
                 switch response.result {
